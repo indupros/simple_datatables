@@ -71,7 +71,7 @@ root.simpleDatatables = ( sSource, aoData, fnCallback ) ->
     if bRegex
       op = "_contains" 
     else 
-      op = "_sw"
+      op = "_s"
     data.push({name: "q["+searchcolumns.join("_or_")+op+"]", value: sSearch});
 
   $.ajax( { "dataType": 'json', "type": "GET", "url": sSource, "data": data, "success": fnCallback } );
