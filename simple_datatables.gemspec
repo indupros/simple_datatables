@@ -7,9 +7,9 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Grigory"]
   s.email       = ["grigory@snsk.ru"]
-  s.homepage    = "http://github.com/gryphon/simple_datatables"
-  s.summary     = %q{Simple datatables to rails mapping using meta_search, will_paginage and jsonify}
-  s.description = %q{Simple datatables to rails mapping using meta_search, will_paginage and jsonify}
+  s.homepage    = "http://github.com/indupros/simple_datatables"
+  s.summary     = %q{Fork of Simple datatables to rails mapping using ransack, will_paginage and jsonify}
+  s.description = %q{Fork of Simple datatables to rails mapping using ransack, will_paginage and jsonify}
 
   s.rubyforge_project = "data_table"
 
