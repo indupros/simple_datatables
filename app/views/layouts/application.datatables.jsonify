@@ -14,7 +14,7 @@ if total_entries.nil? and current_page_entries==0
       next if collection && collection != v
       next if v.class.name.nil?
 
-      collection = v if v.class.name.start_with?("MetaSearch::Searches", "ActiveRecord::Relation", "Mongoid::Criteria")
+      collection = v if v.class.name.start_with?("Ransack::Search", "MetaSearch::Searches", "ActiveRecord::Relation", "Mongoid::Criteria")
     end
   end
 
