@@ -42,7 +42,7 @@ root.simpleDatatables = ( sSource, aoData, fnCallback ) ->
   $.each(aoData, (index, dataObj) -> 
     search_regexp = ///sSearch_([0-9]+)///
     if (col = dataObj.name.match(search_regexp)) and dataObj.value
-      data.push({name: "search["+columns[col[1]]+"_sw"+"]", value: dataObj.value});
+      data.push({name: "q["+columns[col[1]]+"_s"+"]", value: dataObj.value});
 
     search_regexp = ///bSearchable_([0-9]+)///
     if (col = dataObj.name.match(search_regexp)) and dataObj.value
@@ -54,7 +54,7 @@ root.simpleDatatables = ( sSource, aoData, fnCallback ) ->
 
     search_regexp = ///sSortDir_([0-9]+)///
     if (col = dataObj.name.match(search_regexp)) and dataObj.value
-      sortcolumns[col[1]]=sortcolumns[col[1]]+"."+dataObj.value;
+      sortcolumns[col[1]]=sortcolumns[col[1]]+" "+dataObj.value;
 
   );
 
