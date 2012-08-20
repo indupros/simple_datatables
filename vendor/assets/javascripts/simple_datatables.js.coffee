@@ -61,7 +61,7 @@ root.simpleDatatables = ( sSource, aoData, fnCallback ) ->
   data.push({name: "sEcho", value: sEcho});
   data.push({name: "page", value: iDisplayStart/iDisplayLength + 1});
   data.push({name: "per_page", value: iDisplayLength});
-  data.push({name: "q[s]", value: sortcolumns[0]});
+  data.push({name: "sort", value: sortcolumns[0]});
 
   $.each(columns, (index, val) -> 
     data.push({name: "columns["+index+"]", value: val});
@@ -69,10 +69,11 @@ root.simpleDatatables = ( sSource, aoData, fnCallback ) ->
   
   if sSearch
     if bRegex
-      op = "_contains" 
+      op = "_cont" 
     else 
-      op = "_s"
-    data.push({name: "q["+searchcolumns.join("_or_")+op+"]", value: sSearch});
+      op = "_start"
+    # data.push({name: "q["+searchcolumns.join("_or_")+op+"]", value: sSearch});
+    data.push({name: "q", value: sSearch});
 
   $.ajax( { "dataType": 'json', "type": "GET", "url": sSource, "data": data, "success": fnCallback } );
   
