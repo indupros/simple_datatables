@@ -31,12 +31,12 @@ root.simpleDatatables = ( sSource, aoData, fnCallback ) ->
       when "iDisplayLength"
         iDisplayLength = dataObj.value;
       when "iSortCol_0"
-        console.log("yobanarot!");
+        window.console && console.log && console.log("yobanarot!");
         iSortCol = dataObj.value;
       when "sSortDir_0"
         sSortDir = dataObj.value;
       else
-        console.log(dataObj.name);
+        window.console && console.log && console.log(dataObj.name);
   );
 
   $.each(aoData, (index, dataObj) -> 
